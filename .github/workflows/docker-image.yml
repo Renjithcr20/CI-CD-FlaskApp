@@ -25,8 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 
-          edgariphdz98/docker-flask-app-portafolio:latest
+          tags: edgariphdz98/docker-flask-app-portafolio:latest
       #   edgariphdz98/docker-flask-app-portafolio:${{ secrets.VERSION }}
       # -
       #   name: updating version Number of Image
