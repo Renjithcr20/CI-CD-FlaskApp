@@ -15,12 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       name: Checking out code
-    
-    - uses: mr-smithers-excellent/docker-build-push@v5
-      name: Build & push Docker image to Registry
+    -
+      name: Build and push docker Image 
+      uses: docker/build-push-action@v1
       with:
-        image: edgariphdz98/docker-flask-app-portafolio
-        tags: $(date +%s), latest
-        registry: registry.hub.docker.com
+        repository: edgariphdz98/docker-flask-app-portafolio
+        tags: latest , ${{ github.run_number }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+#     - uses: mr-smithers-excellent/docker-build-push@v5
+#       name: Build & push Docker image to Registry
+#       with:
+#         image: edgariphdz98/docker-flask-app-portafolio
+#         tags: $(date +%s), latest
+#         registry: registry.hub.docker.com
+#         username: ${{ secrets.DOCKER_USERNAME }}
+#         password: ${{ secrets.DOCKER_PASSWORD }}
