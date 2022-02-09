@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checking out code
+    
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push Docker image to Registry
+      with:
+        image: edgariphdz98/docker-flask-app-portafolio
+        tags: flask-portafolio:$(date +%s), latest
+        registry: Docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
