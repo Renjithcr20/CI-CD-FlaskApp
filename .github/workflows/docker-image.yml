@@ -25,12 +25,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: edgariphdz98/docker-flask-app-portafolio:${{ secrets.VERSION }}, edgariphdz98/docker-flask-app-portafolio:latest
-      -
-        name: updating version Number of Image
-        uses: hmanzur/actions-set-secret@v2.0.0
-        with:
-          name: 'VERSION'
-          value: $((${{ secrets.VERSION }}+1))
-          repository: edgariph98/CI-CD-FlaskApp
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          tags: |
+          edgariphdz98/docker-flask-app-portafolio:latest
+      #   edgariphdz98/docker-flask-app-portafolio:${{ secrets.VERSION }}
+      # -
+      #   name: updating version Number of Image
+      #   uses: hmanzur/actions-set-secret@v2.0.0
+      #   with:
+      #     name: 'VERSION'
+      #     value: $((${{ secrets.VERSION }}+1))
+      #     repository: edgariph98/CI-CD-FlaskApp
+      #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
