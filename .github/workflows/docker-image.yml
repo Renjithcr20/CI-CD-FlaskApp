@@ -22,7 +22,7 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       uses: docker/login-action@v1 
       with:
-        registry: docker.io
+        # registry: docker.io
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
     -
