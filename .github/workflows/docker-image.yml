@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
+          tags: 
           edgariphdz98/docker-flask-app-portafolio:latest
       #   edgariphdz98/docker-flask-app-portafolio:${{ secrets.VERSION }}
       # -
