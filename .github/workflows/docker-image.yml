@@ -28,6 +28,7 @@ jobs:
         context: .
         push: true
         tags: edgariphdz98/docker-flask-app-portafolio:latest
+        
     # -
     #   name: Build docker image and pushing it
     #   env:
