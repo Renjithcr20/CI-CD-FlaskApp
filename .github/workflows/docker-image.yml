@@ -49,6 +49,18 @@ jobs:
           container-registry-password: ${{ secrets.DOCKER_PASSWORD }}
           secret-name: edgar-registry-secret
           namespace: flask-app
+      # Deploy app to AKS
+      - name: Deploying to Kubernetes cluster
+        uses: azure/k8s-deploy@v1
+        with:
+          manifests: |
+            manifests/deployment.yml
+            manifests/service.yml
+          images: |
+            docker.io/edgariphdz98/docker-flask-app-portafolio:latest
+          imagepullsecrets: |
+            anraghuncluster-registry-connection
+          namespace: ${{ env.NAMESPACE }}
       # -
       #   name: updating version Number of Image
       #   uses: hmanzur/actions-set-secret@v2.0.0
