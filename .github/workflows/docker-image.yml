@@ -35,7 +35,7 @@ jobs:
       - name: Setting context with AKS
         uses: azure/aks-set-context@v2.0
         with:
-          cluster-name: Flask-App-Kluster
+          cluster-name: Flask-app-cluster
           resource-group: app-deployment-resources
       # Create namespace if doesn't exist
       - name: Setting up K8 Master namespace 
