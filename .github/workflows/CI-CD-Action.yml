@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image, Kubernetes deployment
 
 on:
   push:
@@ -32,6 +32,7 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
       - name: Setting context with AKS
         uses: azure/aks-set-context@v2.0
         with:
@@ -51,7 +52,7 @@ jobs:
           namespace: flask-app
       # Deploy app to AKS
       - name: Deploying to Kubernetes cluster
-        uses: azure/k8s-deploy@v1
+        uses: azure/k8s-deploy@v
         with:
           manifests: |
             manifests/deployment.yml
