@@ -59,8 +59,8 @@ jobs:
           images: |
             docker.io/edgariphdz98/docker-flask-app-portafolio:latest
           imagepullsecrets: |
-            anraghuncluster-registry-connection
-          namespace: ${{ env.NAMESPACE }}
+           edgar-registry-secret
+          namespace: flask-app
       # -
       #   name: updating version Number of Image
       #   uses: hmanzur/actions-set-secret@v2.0.0
