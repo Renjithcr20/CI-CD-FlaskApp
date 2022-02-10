@@ -26,5 +26,6 @@ CI-CD Flask Application with Docker, Kubernetes and Github Actions
 
 This is basic Flask Application developed in python, <br>
 That has an integrated CI/CD pipeline built with 
-`Docker` to build the image from the `Flask`, and `Kubernetes` to deploy the Docker image to a kubernetes cluster, hosted in `Azure` using `Azure Kubernetes Services`
+`Docker` to build the image from the `Flask` application, and `Kubernetes` to deploy the Docker image to a kubernetes cluster, hosted in `Azure` using `Azure Kubernetes Services` <br>
+Whete the workflow was set up through the use of `Github Actions` devOps feature.
 
