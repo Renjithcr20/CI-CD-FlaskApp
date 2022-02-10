@@ -32,11 +32,11 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      # - name: Setting context with AKS
-      #   uses: azure/aks-set-context@v2.0
-      #   with:
-      #     cluster-name: Flask-App-Kluster
-      #     resource-group: app-deployment-resources
+      - name: Setting context with AKS
+        uses: azure/aks-set-context@v2.0
+        with:
+          cluster-name: Flask-App-Kluster
+          resource-group: app-deployment-resources
       # -
       #   name: updating version Number of Image
       #   uses: hmanzur/actions-set-secret@v2.0.0
