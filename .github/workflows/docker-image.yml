@@ -27,6 +27,30 @@ jobs:
           push: true
           tags: edgariphdz98/docker-flask-app-portafolio:latest
       #   edgariphdz98/docker-flask-app-portafolio:${{ secrets.VERSION }}
+      # Set the target AKS cluster.
+      - uses: Azure/aks-set-context@v1
+        with:
+          creds: "${{ secrets.AZURE_CREDENTIALS }}"
+          cluster-name: Flask-App-Kluster
+          resource-group: app-deployment-resources
+
+      - uses: Azure/k8s-create-secret@v1.1
+        with:
+          container-registry-url: docker.io
+          container-registry-username: ${{ secrets.DOCKER_USERNAME }}
+          container-registry-password: ${{ secrets.DOCKER_PASSWORD }}
+          secret-name: demo-k8s-secret
+
+      - uses: Azure/k8s-deploy@v1.4
+        with:
+          action: deploy
+          manifests: |
+            manifests/deployment.yml
+            manifests/service.yml
+          images: |
+            demo.azurecr.io/k8sdemo:${{ github.sha }}
+          imagepullsecrets: |
+            demo-k8s-secret
       # -
       #   name: updating version Number of Image
       #   uses: hmanzur/actions-set-secret@v2.0.0
