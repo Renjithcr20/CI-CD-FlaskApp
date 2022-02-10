@@ -37,6 +37,18 @@ jobs:
         with:
           cluster-name: Flask-App-Kluster
           resource-group: app-deployment-resources
+      # Create namespace if doesn't exist
+      - name: Setting up K8 Master namespace 
+        run: |
+          kubectl create namespace flask-app --dry-run=client -o json | kubectl apply -f 
+      # Create imagepullsecret for Azure Container registry (ACR)
+      - uses: azure/k8s-create-secret@v1
+        with:
+          container-registry-url: docker.io
+          container-registry-username: ${{ secrets.DOCKER_USERNAME }}
+          container-registry-password: ${{ secrets.DOCKER_PASSWORD }}
+          secret-name: edgar-registry-secret
+          namespace: flask-app
       # -
       #   name: updating version Number of Image
       #   uses: hmanzur/actions-set-secret@v2.0.0
