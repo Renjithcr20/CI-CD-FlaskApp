@@ -4,7 +4,7 @@ FROM python:3.6.1-alpine
 WORKDIR /app
 # copy the contents into the working dir
 ADD . /app
-# upgrading pip
+# upgrading pip this
 RUN pip install --upgrade pip
 # run pip to install the dependencies of the flask app
 RUN pip install -r requirements.txt
