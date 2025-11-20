@@ -12,7 +12,7 @@ CI-CD Flask Application with Docker, Kubernetes and Github Actions
 <h1 align="center">CI-CD Flask App</h1>
 
   <p align="center">
-    Flask Application with a CI/CD pipline using Docker, Kubernetes and Github Actions
+    Flaskgfgf Application with a CI/CD pipline using Docker, Kubernetes and Github Actions
    <br />
 </div>
 
