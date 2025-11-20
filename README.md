@@ -5,7 +5,7 @@ CI-CD Flask Application with Docker, Kubernetes and Github Actions
 
  -->
 
-<!-- PROJECT1 LOGO -->
+<!-- PROJECT3  LOGO -->
 <br />
 <div align="center">
 
