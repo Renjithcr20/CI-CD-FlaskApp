@@ -5,14 +5,14 @@ CI-CD Flask Application with Docker, Kubernetes and Github Actions
 
  -->
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT1 LOGO -->
 <br />
 <div align="center">
 
 <h1 align="center">CI-CD Flask App</h1>
 
   <p align="center">
-    Flaskgfgf Application with a CI/CD pipline using Docker, Kubernetes and Github Actions
+    Flask Application with a CI/CD pipline using Docker, Kubernetes and Github Actions
    <br />
 </div>
 
